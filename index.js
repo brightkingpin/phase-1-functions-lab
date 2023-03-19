@@ -7,7 +7,7 @@ function distanceFromHqInBlocks(blocks) {
     }
   }
  
-  // distanceFromHqInFeet is not defined
+// distanceFromHqInFeet is not defined
 
   function distanceFromHqInFeet(blocks) {
     const distanceInBlocks = Math.abs(blocks - 42);
@@ -15,24 +15,19 @@ function distanceFromHqInBlocks(blocks) {
     return distanceInFeet;
   }
   
-  module.exports = {
-    distanceFromHqInBlocks,
-    distanceFromHqInFeet,
-    distanceTravelledInFeet,
-    calculatesFarePrice
-  };
-  
 // distanceTravelledInFeet
 
   function distanceTravelledInFeet(start, destination) {
-    const distance = Math.abs(start - destination);
-    const feetPerBlock = 264; // there are 264 feet in a block
-    const distanceInFeet = distance * feetPerBlock;
-  
-    return distanceInFeet;
+
+    
+// calculate distance in Feet
+   if (start > destination) {
+return (start - destination) * 264
+   } else if (start < destination)
+return (destination - start) * 264
   }
 
-  // FarePrice is calculated.
+// FarePrice is calculated.
   function calculatesFarePrice(start, destination) {
     const distance = distanceTravelledInFeet(start, destination);
     let fare;
